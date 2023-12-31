@@ -29,11 +29,11 @@ void setup() {
   opening();
   delay(10);
   
-  lastTime = millis();
-  randomSeed(lastTime);
+  randomSeed(analogRead(A0));
   generate_block();
   update_field(1);
   matrix.renderBitmap(field, 8, 12);
+  lastTime = millis();
 }
 
 bool advanceField = false;
